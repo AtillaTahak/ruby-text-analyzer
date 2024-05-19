@@ -29,10 +29,13 @@ $ gem install text_analyzer
 Usage
 Here is a quick example of how to use TextAnalyzer:
 
+```ruby
 
 require 'text_analyzer'
 
 text = "Hello world! Welcome to Ruby. Ruby is great. Isn't Ruby just amazing? Hello again!"
+
+```
 
 # Word Frequency
 ```bash
