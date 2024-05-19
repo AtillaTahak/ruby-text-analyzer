@@ -14,20 +14,6 @@ After run this code
 $ gem install ./text_analyzer-0.1.0.gem
 
 ```
-And then execute:
-
-```bash
-
-$ bundle install
-
-```
-Or install it yourself as:
-
-```bash
-
-$ gem install text_analyzer
-
-```
 
 Usage
 Here is a quick example of how to use TextAnalyzer:
