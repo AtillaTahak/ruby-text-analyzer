@@ -6,11 +6,14 @@ Welcome to TextAnalyzer! This gem provides a set of utilities for analyzing text
 
 Add this line to your application's Gemfile:
 
+Download text_analyzer-0.1.0.gem
+
+After run this code
 ```ruby
 
-gem 'text_analyzer'
+$ gem install ./text_analyzer-0.1.0.gem
 
-````
+```
 And then execute:
 
 ```bash
