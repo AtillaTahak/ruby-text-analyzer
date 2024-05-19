@@ -1,35 +1,74 @@
 # TextAnalyzer
 
-TODO: Delete this and the text below, and describe your gem
-
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/text_analyzer`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to TextAnalyzer! This gem provides a set of utilities for analyzing text content. You can easily compute word frequency, letter frequency, find the most common words, and split text into sentences.
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
+Add this line to your application's Gemfile:
 
-Install the gem and add to the application's Gemfile by executing:
+```ruby
 
-    $ bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+gem 'text_analyzer'
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+````
+And then execute:
 
-    $ gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+```bash
 
-## Usage
+$ bundle install
 
-TODO: Write usage instructions here
+```
+Or install it yourself as:
 
-## Development
+```bash
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+$ gem install text_analyzer
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```
 
-## Contributing
+Usage
+Here is a quick example of how to use TextAnalyzer:
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/text_analyzer.
 
-## License
+require 'text_analyzer'
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+text = "Hello world! Welcome to Ruby. Ruby is great. Isn't Ruby just amazing? Hello again!"
+
+# Word Frequency
+```bash
+
+puts TextAnalyzer.word_frequency(text)
+# => {"hello"=>2, "world"=>1, "welcome"=>1, "to"=>1, "ruby"=>3, "is"=>1, "great"=>1, "isn't"=>1, "just"=>1, "amazing"=>1, "again"=>1}
+```
+
+
+# Letter Frequency
+```bash
+
+puts TextAnalyzer.letter_frequency(text)
+# => {"h"=>2, "e"=>6, "l"=>6, "o"=>4, "w"=>2, "r"=>4, "d"=>2, "c"=>1, "m"=>3, "t"=>2, "u"=>3, "b"=>2, "y"=>3, "i"=>4, "s"=>3, "g"=>2, "n"=>3, "a"=>5}
+
+```
+
+
+# Sentences
+
+```bash
+
+puts TextAnalyzer.sentences(text)
+# => ["Hello world!", "Welcome to Ruby.", "Ruby is great.", "Isn't Ruby just amazing?", "Hello again!"]
+
+```
+
+
+# Most Common Words
+```bash
+
+puts TextAnalyzer.most_common_words(text, 3)
+# => [["ruby", 3], ["hello", 2], ["world", 1]]
+```
+
+Development
+After checking out the repo, run bin/setup to install dependencies. Then, run rake test to run the tests. You can also run bin/console for an interactive prompt that will allow you to experiment.
+
+To install this gem onto your local machine, run bundle exec rake install.
